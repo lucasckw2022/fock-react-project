@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.singleQuote": true,
+    "editor.formatOnSave": true,
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "files.eol": "\n",
+    "prettier.endOfLine": "lf"
+}
