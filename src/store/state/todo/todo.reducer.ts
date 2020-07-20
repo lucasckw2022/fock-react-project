@@ -51,5 +51,6 @@ function onItemAdded(state: TodoState): TodoState {
   return {
     ...state,
     isAddingItem: false,
+    newItemInputValue: "",
   };
 }
