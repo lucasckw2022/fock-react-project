@@ -17,7 +17,7 @@ export interface AppDispatchProps {
   onInitialActionDispatch(): void;
 }
 
-export interface AppOwnProps {}
+export interface AppOwnProps { }
 
 export type AppProps = AppStateProps & AppDispatchProps & AppOwnProps;
 
@@ -34,6 +34,7 @@ export const AppComponent: React.FC<AppProps> = ({
   onInitialActionDispatch,
   onNewItemInputValueChange,
   onRemoveItem,
+  isAddingItem,
 }) => {
   React.useEffect(() => {
     onInitialActionDispatch();
@@ -53,10 +54,9 @@ export const AppComponent: React.FC<AppProps> = ({
       <div className="card shadow">
         <div className="card-body">
           <h5 className="card-title">Todo List</h5>
-          <WithAction color="primary" onTrigger={() => onItemAdded(newItemInputValue)} text="Add">
+          <WithAction color="primary" onTrigger={() => onItemAdded(newItemInputValue)} text="Add" isAddingItem={isAddingItem} isDisabled={isAddingItem}>
             <Input value={newItemInputValue} onChange={onNewItemInputValueChange} />
           </WithAction>
-
           <h6>Your todo list:</h6>
           <ItemList items={items} onRemove={onRemoveItem} />
         </div>

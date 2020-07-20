@@ -24,7 +24,7 @@ export const Input: React.FC<InputProps> = ({ placeholder, value, onChange, onFo
       onBlur={onBlur}
       onChange={onValueChange}
       onFocus={onFocus}
-      placeholder={placeholder}
+      placeholder={placeholder ? placeholder : ""}
       type="text"
       value={value}
     />
